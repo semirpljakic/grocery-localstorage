@@ -23,7 +23,7 @@ function App() {
     if (!name) {
       //display alert:
      
-      showAlert(true, 'please enter value', 'danger');
+      showAlert(true, 'please enter value', 'warning');
     } else if (name && isEditing) {
       //display with edit:
       setList(
