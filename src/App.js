@@ -22,7 +22,7 @@ function App() {
     e.preventDefault();
     if (!name) {
       //display alert:
-      // setAlert({ show: true, msg: 'please enter value', type: 'danger' });
+     
       showAlert(true, 'please enter value', 'danger');
     } else if (name && isEditing) {
       //display with edit:
@@ -47,21 +47,21 @@ function App() {
     }
   };
 
-  // pravimo alert:
+ 
   const showAlert = (show = false, msg = '', type = '') => {
     setAlert({ show, msg, type });
   };
-  // da izbrisemo sve iteme:
+ 
   const clearList = () => {
     showAlert(true, 'empty list', 'danger');
     setList([]);
   };
-  // da izbrisemo pojedinacno item:
+ 
   const removeItem = id => {
     showAlert(true, 'item removed', 'danger');
     setList(list.filter(item => item.id !== id));
   };
-  // da editujemo item:
+ 
   const editItem = id => {
     const specificItem = list.find(item => item.id === id);
     console.log(specificItem);
@@ -70,7 +70,7 @@ function App() {
     setName(specificItem.title);
   };
 
-  // LOCAL STORAGE:
+ 
   useEffect(() => {
     localStorage.setItem('list', JSON.stringify(list));
   }, [list]);
